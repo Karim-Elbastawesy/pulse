@@ -1,0 +1,71 @@
+@import "tailwindcss";
+
+/* ── Custom animations ─────────────────────────────────────── */
+@keyframes marquee {
+  0%   { transform: translateX(0px) rotate(0deg); }
+  50%  { transform: translateX(50px) rotate(2deg); }
+  100% { transform: translateX(0px) rotate(0deg); }
+}
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50%       { transform: translateY(-14px); }
+}
+@keyframes fade-in-up {
+  from { opacity: 0; transform: translateY(28px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes pulse-glow {
+  0%, 100% { opacity: 0.15; }
+  50%       { opacity: 0.35; }
+}
+@keyframes shimmer {
+  0%   { background-position: -200% center; }
+  100% { background-position:  200% center; }
+}
+
+.animate-marquee    { animation: marquee     8s ease-in-out infinite; }
+.animate-float      { animation: float       6s ease-in-out infinite; }
+.animate-fade-in-up { animation: fade-in-up  0.8s ease-out forwards; }
+.animate-pulse-glow { animation: pulse-glow  4s ease-in-out infinite; }
+.animate-shimmer    { animation: shimmer     3s linear infinite; }
+
+/* ── Utilities ─────────────────────────────────────────────── */
+.font-display {
+  font-family: 'Bebas Neue', 'DM Sans', system-ui, sans-serif;
+  letter-spacing: 0.03em;
+}
+
+.text-gradient {
+  background: linear-gradient(135deg, #a78bfa 0%, #7c3aed 45%, #c084fc 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.text-shimmer {
+  background: linear-gradient(90deg, #a78bfa 0%, #e879f9 30%, #a78bfa 60%, #7c3aed 100%);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.dot-grid {
+  background-image: radial-gradient(rgba(148,163,184,0.12) 1px, transparent 1px);
+  background-size: 20px 20px;
+  mask-image: radial-gradient(ellipse 70% 70% at 50% 50%, #000 60%, transparent 100%);
+}
+
+.glow-violet {
+  box-shadow: 0 0 40px 8px rgba(124,58,237,0.2), 0 0 80px 20px rgba(124,58,237,0.08);
+}
+
+/* ── Selection ─────────────────────────────────────────────── */
+::selection {
+  background-color: #7c3aed;
+  color: white;
+}
+
+/* ── Scrollbar ─────────────────────────────────────────────── */
+* { scrollbar-width: none; }
+*::-webkit-scrollbar { display: none; }
