@@ -1,7 +1,6 @@
 import { ChevronRight } from 'lucide-react'
 import Link from 'next/link'
 import React from 'react'
-import Movies from './_components/nowPlaying/nowPlaying'
 import Image from 'next/image'
 
 
